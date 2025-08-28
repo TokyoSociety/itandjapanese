@@ -37,6 +37,7 @@
 						<i class="fa fa-bars"></i>
 					</div>
 				</div>
+				<div id="time" align="right"> TODAY: </div>
 				<div class="col-lg-9 col-md-9">
 					<a href="" class="site-btn header-btn">Login</a>
 					<nav class="main-menu">
@@ -471,6 +472,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
+	<script type="text/javascript">
+				timerID = setInterval('clock()',500);
+				function clock() {
+					document.getElementById("time").innerHTML = getNow();
+				}
+				function getNow() {
+					var now = new Date();
+					var year = now.getFullYear();
+					var mon = ('0' + (now.getMonth() + 1)).slice(-2);
+					var day = ('0' + now.getDate()).slice(-2);
+					var hour = ('0' + now.getHours()).slice(-2);
+					var min = ('0' + now.getMinutes()).slice(-2);
+					var sec = ('0' + now.getSeconds()).slice(-2);
+					var week = now.getDay();
+					var weekItems = ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"];
+					var dayOfWeek = weekItems[week];
+					var s = year + "/" + mon + "/" + day + " " +"("+dayOfWeek +") "+ hour + ":" + min + ":" + sec; 
+					return s;
+				}
+			</script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/mixitup.min.js"></script>
