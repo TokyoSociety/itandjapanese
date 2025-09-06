@@ -265,6 +265,8 @@ ol {
 }
 
 .site-logo {
+	width: 700px;
+    height: 700px;
 	display: inline-block;
 }
 
