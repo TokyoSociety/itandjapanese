@@ -334,12 +334,33 @@
 				<div class="copyright">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://tokyosociety.github.io/itandjapanese/" target="_blank">Tokyo Society</a>
 </div>
+				
 			</div>
 		</div>
 	</footer> 
 	<!-- footer section end -->
 
-
+<!--====== Javascripts & Jquery ======-->
+	<script type="text/javascript">
+				timerID = setInterval('clock()',500);
+				function clock() {
+					document.getElementById("time").innerHTML = getNow();
+				}
+				function getNow() {
+					var now = new Date();
+					var year = now.getFullYear();
+					var mon = ('0' + (now.getMonth() + 1)).slice(-2);
+					var day = ('0' + now.getDate()).slice(-2);
+					var hour = ('0' + now.getHours()).slice(-2);
+					var min = ('0' + now.getMinutes()).slice(-2);
+					var sec = ('0' + now.getSeconds()).slice(-2);
+					var week = now.getDay();
+					var weekItems = ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"];
+					var dayOfWeek = weekItems[week];
+					var s = year + "/" + mon + "/" + day + " " +"("+dayOfWeek +") "+ hour + ":" + min + ":" + sec; 
+					return s;
+				}
+			</script>
 	<!--====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
